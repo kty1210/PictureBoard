@@ -10,3 +10,6 @@ create table mvcboard(
     pass varchar2(50) not null,
     visitcount number default 0 not null
 );
+
+insert into mvcboard (idx, name, title, content, pass)
+	values (seq_board_num.nextval, '김유신', '자료실 제목1 입니다.', '내용', '1234');
