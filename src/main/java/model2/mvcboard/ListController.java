@@ -69,3 +69,4 @@ public class ListController extends HttpServlet {
         req.getRequestDispatcher("/14MVCBoard/List.jsp").forward(req, resp);
     }
 }
+	

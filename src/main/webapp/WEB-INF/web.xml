@@ -30,23 +30,6 @@
     <location>/02ImplicitObject/Exception.jsp</location>
   </error-page> -->
   
-  <!-- 오라클 데이터베이스 접속 정보(예제 5-8) -->
-  <context-param>
-    <param-name>OracleDriver</param-name>
-    <param-value>oracle.jdbc.OracleDriver</param-value>
-  </context-param>
-  <context-param>
-    <param-name>OracleURL</param-name>
-    <param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
-  </context-param>
-  <context-param>
-    <param-name>OracleId</param-name>
-    <param-value>musthave</param-value>
-  </context-param>
-  <context-param>
-    <param-name>OraclePwd</param-name>
-    <param-value>1234</param-value>
-  </context-param>
   
   <!-- 세션 유지 시간 설정(예제 6-1) -->
   <session-config>
@@ -122,42 +105,4 @@
     <url-pattern>/mvcboard/list.do</url-pattern>
   </servlet-mapping>
   
-  <!-- 서블릿 매핑 5(예제 14-7) -->
-  <servlet>
-    <servlet-name>MVCBoardWrite</servlet-name>
-    <servlet-class>model2.mvcboard.WriteController</servlet-class>
-    <multipart-config>
-      <max-file-size>1048576</max-file-size> <!-- 1MB -->
-      <max-request-size>10485760</max-request-size> <!-- 10MB -->
-    </multipart-config>
-  </servlet>  
-  <servlet-mapping>
-    <servlet-name>MVCBoardWrite</servlet-name>
-    <url-pattern>/mvcboard/write.do</url-pattern>
-  </servlet-mapping>
-  
-  <!-- 필터 -->
-  <filter>
-    <filter-name>BasicFilter</filter-name>
-    <filter-class>filter.BasicFilter</filter-class>
-    <init-param>
-      <param-name>FILTER_INIT_PARAM</param-name>
-      <param-value>필터 초기화 매개변수</param-value>
-    </init-param>
-  </filter>
-  <filter-mapping>
-    <filter-name>BasicFilter</filter-name>
-    <url-pattern>/15FilterListener/BasicFilter.jsp</url-pattern>
-  </filter-mapping>
-  
-  <!-- 리스너 -->
-  <listener>
-    <listener-class>listener.ContextListener</listener-class>
-  </listener>
-  
-  <!-- 웹소켓 채팅 요청 URL -->
-  <context-param>
-    <param-name>CHAT_ADDR</param-name>
-    <param-value>ws://localhost:8081/MustHaveJSP</param-value>
-  </context-param>
 </web-app>
