@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse; // HttpResponse 대신 HttpServletResponse 사용
 
+import utils.FileUtil;
 import utils.JSFunction;
 
 public class WriteController extends HttpServlet {
