@@ -134,5 +134,21 @@ public class MVCBoardDAO extends DBConnPool {
         return dto;  // 결과 반환
     }
     
+
+    // 주어진 일련번호에 해당하는 게시물의 조회수를 1 증가시킵니다.
+    public void updateVisitCount(String idx) {
+        String query = "UPDATE mvcboard SET "
+                     + " visitcount=visitcount+1 "
+                     + " WHERE idx=?"; 
+        try {
+            psmt = con.prepareStatement(query);
+            psmt.setString(1, idx);
+            psmt.executeQuery();
+        }
+        catch (Exception e) {
+            System.out.println("게시물 조회수 증가 중 예외 발생");
+            e.printStackTrace();
+        }
+    }
     
 }
