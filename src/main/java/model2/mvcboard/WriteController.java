@@ -11,7 +11,9 @@ import utils.FileUtil;
 import utils.JSFunction;
 
 public class WriteController extends HttpServlet {
-    
+	private static final long serialVersionUID = 1L;
+	
+	
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
         throws ServletException, IOException {
@@ -23,8 +25,10 @@ public class WriteController extends HttpServlet {
             throws ServletException, IOException {
         // 1. 파일 업로드 처리 =============================
         // 업로드 디렉터리의 물리적 경로 확인
-        String saveDirectory = req.getServletContext().getRealPath("/Uploads");
-                
+        //String saveDirectory = req.getServletContext().getRealPath("/Uploads");
+        //절대경로
+    	String saveDirectory = "C:/kdt_kty/ecl_data/PictureBoard/src/main/webapp/Uploads";
+    	
         // 파일 업로드
         String originalFileName = "";
         try {
