@@ -51,7 +51,22 @@ public class FileUtil {
 	//파일명 변경
 	public static String renameFile(String sDirectory, String fileName) {
 		//원본파일의 확장자 잘라내기
-		String ext = fileName.substring(fileName.lastIndexOf("."));
+		//String ext = fileName.substring(fileName.lastIndexOf("."));
+		
+		// utils.FileUtil.renameFile 메소드 내부
+		// fileName에서 확장자 추출 부분
+		int dotIndex = fileName.lastIndexOf(".");
+		String ext; // 확장자를 저장할 변수 선언
+		if (dotIndex != -1) {
+		    // 파일 이름에 "."이 존재하는 경우, 확장자를 추출
+		    ext = fileName.substring(dotIndex);
+		} else {
+		    // 파일 이름에 "."이 없는 경우, 확장자가 없음을 의미하거나 다른 처리 필요
+		    // 예를 들어, 확장자를 비워두거나 기본 확장자를 지정할 수 있습니다.
+		    ext = ""; // 확장자 없음을 의미하거나, 기본 확장자를 지정
+		}
+
+		
 		//날짜 및 시간을 통해 파일명 생성
 		String now = new SimpleDateFormat("yyyyMMdd_HmsS").format(new Date());
 		//"날짜_시간.확장자" 형태의 새로운 파일명 생성
