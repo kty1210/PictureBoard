@@ -104,4 +104,6 @@ public class MVCBoardDAO extends DBConnPool {
         }
         return result;
     }
+    
+    
 }
